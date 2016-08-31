@@ -64,9 +64,11 @@ System.config({
     '@angular': 'vendor/@angular', 
     'rxjs': 'vendor/rxjs', 
     'main': 'main.js',
-    'main-static' : 'main-static.js'
+    'main-static' : 'main-static.js',
+    'typescript': 'vendor/typescript/lib/typescript.js'
   },
-  packages: cliSystemConfigPackages
+  packages: cliSystemConfigPackages,
+  transpiler: 'typescript'
 });
 
 // Apply the user's configuration.

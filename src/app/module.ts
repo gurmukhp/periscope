@@ -1,4 +1,4 @@
-import {NgModule, ApplicationRef} from '@angular/core';
+import {NgModule, ApplicationRef, ModuleWithProviders} from '@angular/core';
 import {PeriscopeAppComponent} from './periscope.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
@@ -23,6 +23,14 @@ import {MdListModule} from '@angular2-material/list';
 import {MdIconModule} from '@angular2-material/icon';
 import {MdTabsModule} from '@angular2-material/tabs';
 
+@NgModule({})
+export class TestModule {
+ static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: MdIconModule,
+      providers: [],
+    };
+  }}
 
 export const routes: Routes = [
   { path: 'triage_pr', component: TriagePrComponent },
@@ -35,7 +43,7 @@ export const routes: Routes = [
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpModule,
     MdSidenavModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdRadioModule,
     MdProgressCircleModule, MdProgressBarModule, MdCardModule, MdInputModule,
-    MdListModule, MdIconModule, MdTabsModule
+    MdListModule, MdIconModule.forRoot(), MdTabsModule, TestModule.forRoot()
   ],
   providers: [
     FIREBASE_PROVIDERS,
@@ -53,3 +61,5 @@ export const routes: Routes = [
   bootstrap: [PeriscopeAppComponent]
 })
 export class PeriscopeModule {}
+
+
