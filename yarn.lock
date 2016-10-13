@@ -87,6 +87,10 @@
   dependencies:
     tsickle "^0.1.7"
 
+"@ng-bootstrap/ng-bootstrap":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.7.tgz#065a1a5fa027ecb95877054d32f0e6819d87ae9c"
+
 "@ngtools/webpack@latest":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-1.1.0.tgz#89d8d5b7614babb0015992ec7123dceb2e189357"
@@ -846,6 +850,13 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bootstrap@4.0.0-alpha.4:
+  version "4.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.4.tgz#823cb353d6c50a38df98aa18ec4df56ef0355e7a"
+  dependencies:
+    jquery "1.9.1 - 3"
+    tether "^1.1.1"
 
 bower-config@^1.3.0:
   version "1.4.0"
@@ -3841,6 +3852,10 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
+"jquery@1.9.1 - 3":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
+
 js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
@@ -4053,6 +4068,12 @@ levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+linkify-it@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.1.tgz#fda759fad89d9e4659aa7144b8a4f685691dab69"
+  dependencies:
+    uc.micro "^1.0.1"
 
 linkify-it@~1.2.0:
   version "1.2.4"
@@ -4505,6 +4526,16 @@ map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
+markdown-it:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.0.0.tgz#e66255497a0e409e816fbc67807975f4f26f6f82"
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.3"
+
 markdown-it-terminal@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/markdown-it-terminal/-/markdown-it-terminal-0.0.3.tgz#c77a8533c2170b46d2a907a3c3452d4d7f4aa5db"
@@ -4579,7 +4610,7 @@ md5@^2.0.0:
     crypt "~0.0.1"
     is-buffer "~1.1.1"
 
-mdurl@~1.0.0:
+mdurl@^1.0.1, mdurl@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
@@ -7130,6 +7161,10 @@ testem@^1.6.0:
     tap-parser "^1.1.3"
     xmldom "^0.1.19"
 
+tether@^1.1.1:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/tether/-/tether-1.3.7.tgz#65578104741694f9672c808eae04a9adae7b0304"
+
 text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
@@ -7379,7 +7414,7 @@ typescript@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.0.2.tgz#a63f848074498a4dfa7f293afda0835d501d9540"
 
-uc.micro@^1.0.0, uc.micro@^1.0.1:
+uc.micro@^1.0.0, uc.micro@^1.0.1, uc.micro@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.3.tgz#7ed50d5e0f9a9fb0a573379259f2a77458d50192"
 

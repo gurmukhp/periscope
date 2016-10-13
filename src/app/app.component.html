@@ -1,5 +1,24 @@
-<h1>
+<md-sidenav-layout fullscreen>
+    <md-toolbar color="primary">
+        <div>
+            <button class="app-icon-button"  md-icon-button>
+                <md-icon>menu</md-icon>
+            </button>
+            Periscope v2
+        </div>
 
-  {{title}}
-</h1>
-<app-dashboard></app-dashboard>
+        <div>
+            <button md-button>FLAT</button>
+        </div>
+    </md-toolbar>
+
+    <div class="app-content">
+        <h1>{{title}}</h1>
+        <triage-component title="Test title" [comments]="['a', 'b', 'c']" ></triage-component>
+    </div>
+
+    <app-dashboard></app-dashboard>
+
+
+
+</md-sidenav-layout>
