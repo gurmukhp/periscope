@@ -5,10 +5,14 @@ import {MaterialModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    CounterComponent
   ],
   imports: [
     MaterialModule.forRoot(),
