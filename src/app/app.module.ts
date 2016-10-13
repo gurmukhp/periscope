@@ -16,7 +16,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   declarations: [
     AppComponent,
     DashboardComponent,
-    CounterComponent
+    CounterComponent,
     TriageComponentComponent,
     InnerMd,
   ],
