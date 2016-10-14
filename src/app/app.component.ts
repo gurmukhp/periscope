@@ -1,13 +1,27 @@
 import { Component } from '@angular/core';
 
-const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
-  'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
-  'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
-  'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
-  'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
-  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+
+const COMPONENTS: string[] = [
+  'animations',
+  'benchpress',
+  'build & ci',
+  'core & compiler',
+  'docs',
+  'forms',
+  'http',
+  'i18n',
+  'metadata-extractor',
+  'packaging',
+  'performance',
+  'router',
+  'security',
+  'testing',
+  'upgrade',
+  'web-worker',
+  'zone',
+];
 
 
 @Component({
@@ -17,5 +31,23 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 })
 export class AppComponent {
   title = 'app works!';
-  states = states;
+  activeCmps: {[name: string]: boolean} = {};
+  cmps = COMPONENTS;
+
+  closeResult: string;
+
+  constructor(private modalService: NgbModal) {
+    for (const cmp of this.cmps) {
+      this.activeCmps[cmp] = false;
+    }
+  }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      console.log('close');
+      this.closeResult = `Closed with: ${result}`;
+    }, _ => null);
+  }
+
+
 }

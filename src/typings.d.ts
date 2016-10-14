@@ -4,4 +4,4 @@
 
 declare var System: any;
 declare module 'markdown-it';
-declare module 'hightlight.js';
+declare module 'highlight.js';

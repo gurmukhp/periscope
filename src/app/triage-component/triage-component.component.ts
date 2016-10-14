@@ -4,6 +4,8 @@ import {MarkdownService} from '../test.service';
 
 
 const md = `
+(c)
+
 **I'm submitting a ...**  (check one with "x")
 \`\`\`
   [ x ] bug report => search github for a similar issue or PR before submitting
@@ -60,6 +62,9 @@ Webpack 2.1.0-beta.25
 * **Language:** [ TypeScript  Version 2.0.3 ]
 
 * **Node (for AoT issues):** \`node --version\` = v6.5.0  
+
+![aot_perf](https://cloud.githubusercontent.com/assets/12346501/19327782/9fe1d2ee-909e-11e6-8b1b-abb8370159bf.png)
+
 `;
 
 
@@ -89,14 +94,13 @@ export class TriageComponentComponent implements OnInit {
 }
 
 @Directive({
-  selector: '[innerMd]'
+  selector: '[markdown]'
 })
 export class InnerMd {
   @HostBinding('innerHTML') innerHtml: string;
 
-  @Input() set innerMd(md) {
+  @Input() set markdown(md) {
     this.innerHtml = this.mdService.toHtml(md);
-    //this.innerHtml = `<script>alert('boo')</script>`
   }
 
   constructor(private mdService: MarkdownService) {}
