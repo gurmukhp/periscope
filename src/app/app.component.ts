@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 const COMPONENTS: string[] = [
   'animations',
@@ -33,21 +33,41 @@ export class AppComponent {
   title = 'app works!';
   activeCmps: {[name: string]: boolean} = {};
   cmps = COMPONENTS;
+  form: FormGroup;
 
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {
+  details: {
+    customReply?: string;
+    savedReply?: string;
+    needRepro?: boolean;
+    canBeClosed?: boolean;
+    close?: boolean;
+  } = {};
+
+
+  constructor(private modalService: NgbModal, private fb: FormBuilder) {
     for (const cmp of this.cmps) {
       this.activeCmps[cmp] = false;
     }
   }
 
   open(content) {
+    this.buildForm();
     this.modalService.open(content).result.then((result) => {
       console.log('close');
       this.closeResult = `Closed with: ${result}`;
+      console.log(this.form.value);
     }, _ => null);
   }
 
-
+  private buildForm() {
+    this.form = this.fb.group({
+      customReply: [this.details.customReply],
+      savedReply: [this.details.savedReply],
+      needRepro: [this.details.needRepro],
+      canBeClosed: [this.details.canBeClosed],
+      close: [this.details.close],
+    });
+  }
 }

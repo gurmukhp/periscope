@@ -4,4 +4,3 @@
 
 declare var System: any;
 declare module 'markdown-it';
-declare module 'highlight.js';

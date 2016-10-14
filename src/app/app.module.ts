@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {MaterialModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
 
@@ -25,6 +25,7 @@ import { MultiCompleteComponent } from './multi-complete/multi-complete.componen
   imports: [
     MaterialModule.forRoot(),
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot()

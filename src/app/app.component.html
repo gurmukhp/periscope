@@ -1,13 +1,10 @@
-<!-- Fixed navbar -->
-<div class="pos-f-t" style="border-bottom: 10px solid white">
-
+<div class="pos-f-t">
     <div class="collapse" id="navbar-header">
         <div class="container bg-inverse p-a-1">
             <h3>Collapsed content</h3>
             <p>Toggleable via the navbar brand.</p>
         </div>
     </div>
-
     <nav class="navbar navbar-light navbar-static-top bg-faded">
         <div class="container">
             <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
@@ -34,34 +31,17 @@
     </nav>
 </div>
 
-<!-- Begin page content -->
-<div class="container" style="padding: 70px 0 250px">
-
-    <!--
-    <div class="m-t-1">
-        <h1>Sticky footer with fixed navbar</h1>
-    </div>
-    <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-    <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
-    -->
-
+<div class="container" style="padding: 70px 0 20px">
     <h1>{{title}}</h1>
-
-
+    <p class="lead text-muted">Created on 10/01/2016 - 2/34</p>
     <triage-component title="Test title" [comments]="['a', 'b', 'c']" ></triage-component>
-
-    <app-dashboard></app-dashboard>
-
 </div>
 
-<footer class="footer navbar-fixed-bottom navbar navbar-light navbar-static-top bg-faded"
-        style="border-top: 10px solid white">
-
+<footer class="footer navbar navbar-light navbar-static-bottom bg-faded">
     <div class="container">
         <div class="form-group row">
             <multi-complete [items]="cmps"></multi-complete>
         </div>
-
         <div class="form-group row">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                 <button type="button" class="btn btn-secondary" (click)="open(details)">Details</button>
@@ -69,48 +49,44 @@
             </div>
         </div>
     </div>
-
 </footer>
 
-<template #details let-c="close" let-d="dismiss" ngbModalContainer>
+<template #details let-c="close" let-d="dismiss" left-form="detailForm" ngbModalContainer>
     <div class="modal-header">
         <h4 class="modal-title">Issue....</h4>
     </div>
     <div class="modal-body">
-        <form>
+        <form [formGroup]="form">
             <div class="form-group">
                 <textarea class="form-control" id="customReply" rows="5"
-                          placeholder="custom reply"></textarea>
+                          placeholder="custom reply" formControlName="customReply"></textarea>
             </div>
-
             <div class="form-group">
                 <label for="savedReply">Example multiple select</label>
-                <select class="form-control" id="savedReply">
+                <select class="form-control" id="savedReply" formControlName="savedReply">
                     <option>(empty)</option>
                     <option>need repro</option>
                     <option>support request</option>
                     <option>docs</option>
                 </select>
             </div>
-
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input"> Need repro
+                    <input type="checkbox" class="form-check-input" formControlName="needRepro">
+                    Need repro
                 </label>
             </div>
-
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input"> Can be closed ?
+                    <input type="checkbox" class="form-check-input" formControlName="canBeClosed">
+                    Can be closed ?
                 </label>
             </div>
-
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input"> Close
+                    <input type="checkbox" class="form-check-input" formControlName="close"> Close
                 </label>
             </div>
-
         </form>
     </div>
 
