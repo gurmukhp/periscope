@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CounterComponent } from './counter/counter.component';
 import { TriageComponentComponent, InnerMd } from './triage-component/triage-component.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { MultiCompleteComponent } from './multi-complete/multi-complete.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     CounterComponent,
     TriageComponentComponent,
     InnerMd,
+    MultiCompleteComponent,
   ],
   imports: [
     MaterialModule.forRoot(),

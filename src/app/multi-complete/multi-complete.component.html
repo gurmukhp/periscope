@@ -1,0 +1,8 @@
+<div class="form-inline">
+  <div class="form-group">
+    <ng-container *ngFor="let item of selected; let idx = index;">
+      <span class="tag tag-default">{{item}}</span><span class="tag tag-default btn btn-danger" (click)="removeSelected(idx)">x</span>
+    </ng-container>
+    <input type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" (selectItem)="addSelected($event)" style="display: inline-block; width: "/>
+  </div>
+</div>
