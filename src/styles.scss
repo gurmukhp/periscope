@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/*
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+*/
 @import '~bootstrap/scss/bootstrap.scss';
+
+@import '~highlight.js/styles/github.css';
+
+pre {
+  border: 1px solid #eee;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  padding: 9px;
+}
+

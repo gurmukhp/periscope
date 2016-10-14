@@ -3306,7 +3306,7 @@ heimdalljs@^0.2.0, heimdalljs@^0.2.1:
   dependencies:
     rsvp "^3.2.1"
 
-highlight.js@^9.0.0:
+highlight.js, highlight.js@^9.0.0:
   version "9.7.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.7.0.tgz#e7a926bf3079c65b2ae50314878e456a009b4aac"
 
