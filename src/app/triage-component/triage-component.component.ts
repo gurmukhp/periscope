@@ -1,6 +1,8 @@
-import {Directive, Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
-import {MarkdownService} from '../test.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {FormBuilder, FormGroup} from "@angular/forms";
+
 
 
 const md = `
@@ -74,34 +76,46 @@ Webpack 2.1.0-beta.25
   templateUrl: './triage-component.component.html',
   styleUrls: ['./triage-component.component.css']
 })
-export class TriageComponentComponent implements OnInit {
+export class TriageComponentComponent {
+  @Input() issues: any[];
 
-  @Input() title: string;
+  form: FormGroup;
 
-  @Input() comments: string[];
+  closeResult: string;
 
-  @Output() change = new EventEmitter<any>();
+  details: {
+    customReply?: string;
+    savedReply?: string;
+    needRepro?: boolean;
+    canBeClosed?: boolean;
+    close?: boolean;
+  } = {};
 
-  constructor() { }
+  constructor(private modalService: NgbModal, private fb: FormBuilder) {
+
+  }
 
   getMarkdown() {
     return md;
   }
 
-  ngOnInit() {
+  open(content) {
+    this.buildForm();
+    this.modalService.open(content).result.then((result) => {
+      console.log('close');
+      this.closeResult = `Closed with: ${result}`;
+      console.log(this.form.value);
+    }, _ => null);
   }
 
-}
-
-@Directive({
-  selector: '[markdown]'
-})
-export class InnerMd {
-  @HostBinding('innerHTML') innerHtml: string;
-
-  @Input() set markdown(md) {
-    this.innerHtml = this.mdService.toHtml(md);
+  private buildForm() {
+    this.form = this.fb.group({
+      customReply: [this.details.customReply],
+      savedReply: [this.details.savedReply],
+      needRepro: [this.details.needRepro],
+      canBeClosed: [this.details.canBeClosed],
+      close: [this.details.close],
+    });
   }
 
-  constructor(private mdService: MarkdownService) {}
 }

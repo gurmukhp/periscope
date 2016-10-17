@@ -2,5 +2,7 @@
 // https://github.com/typings/typings
 // https://www.typescriptlang.org/docs/handbook/writing-declaration-files.html
 
-declare var System: any;
+declare const System: any;
 declare module 'markdown-it';
+declare module 'highlight.js';
+declare module 'GitHub';

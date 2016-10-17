@@ -1,98 +1,47 @@
 <div class="pos-f-t">
-    <div class="collapse" id="navbar-header">
-        <div class="container bg-inverse p-a-1">
-            <h3>Collapsed content</h3>
-            <p>Toggleable via the navbar brand.</p>
-        </div>
+  <div class="collapse" id="navbar-header">
+    <div class="container bg-inverse p-a-1">
+      <h3>Collapsed content</h3>
+      <p>Toggleable via the navbar brand.</p>
     </div>
-    <nav class="navbar navbar-light navbar-static-top bg-faded">
-        <div class="container">
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-                &#9776;
-            </button>
-            <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-                <a class="navbar-brand" href="#">Periscope v2</a>
-                <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Nav item <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Another nav item</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">More nav</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Last link</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-
-<div class="container" style="padding: 70px 0 20px">
-    <h1>{{title}}</h1>
-    <p class="lead text-muted">Created on 10/01/2016 - 2/34</p>
-    <triage-component title="Test title" [comments]="['a', 'b', 'c']" ></triage-component>
-</div>
-
-<footer class="footer navbar navbar-light navbar-static-bottom bg-faded">
+  </div>
+  <nav class="navbar navbar-light navbar-static-top bg-faded">
     <div class="container">
-        <div class="form-group row">
-            <multi-complete [items]="cmps"></multi-complete>
-        </div>
-        <div class="form-group row">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-secondary" (click)="open(details)">Details</button>
-                <button type="button" class="btn btn-primary">Next</button>
-            </div>
-        </div>
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+              data-target="#exCollapsingNavbar2">
+        &#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <a class="navbar-brand" href="#">Periscope v2</a>
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Nav item <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Another nav item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">More nav</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Last link</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</footer>
+  </nav>
+</div>
 
-<template #details let-c="close" let-d="dismiss" left-form="detailForm" ngbModalContainer>
-    <div class="modal-header">
-        <h4 class="modal-title">Issue....</h4>
-    </div>
-    <div class="modal-body">
-        <form [formGroup]="form">
-            <div class="form-group">
-                <textarea class="form-control" id="customReply" rows="5"
-                          placeholder="custom reply" formControlName="customReply"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="savedReply">Example multiple select</label>
-                <select class="form-control" id="savedReply" formControlName="savedReply">
-                    <option>(empty)</option>
-                    <option>need repro</option>
-                    <option>support request</option>
-                    <option>docs</option>
-                </select>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" formControlName="needRepro">
-                    Need repro
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" formControlName="canBeClosed">
-                    Can be closed ?
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" formControlName="close"> Close
-                </label>
-            </div>
-        </form>
-    </div>
+<ul>
+  <li *ngFor="let issue of issues | async">
+    <h3>{{issue.title}}</h3>
+  </li>
+</ul>
 
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="d('')">Cancel</button>
-        <button type="button" class="btn btn-primary" (click)="c('')">Apply</button>
-    </div>
-</template>
 
+<!--
+
+<triage-component [issues]="issues"></triage-component>
+
+
+-->

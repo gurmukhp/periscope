@@ -101,6 +101,10 @@
   version "2.0.33"
   resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.33.tgz#45f57352474181425bb4b65f7313a60426d54bab"
 
+"@types/highlight.js@^9.1.8":
+  version "9.1.8"
+  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.1.8.tgz#d227f18bcb8f3f187e16965f2444859a04689758"
+
 "@types/jasmine@^2.2.30", "@types/jasmine@^2.2.31":
   version "2.5.35"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.35.tgz#5566406dc8417d380d6c2f9562ec3c71ec28ef78"
@@ -566,6 +570,12 @@ aws-sign2@~0.6.0:
 aws4@^1.2.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.5.0.tgz#0a29ffb79c31c9e712eeb087e8e7a64b4a56d755"
+
+axios@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.10.0.tgz#5b0ec0d5fb53e79b98b7bf84c0e9b1cf902fdfc4"
+  dependencies:
+    follow-redirects "0.0.7"
 
 babel-core@^5.0.0:
   version "5.8.38"
@@ -2786,6 +2796,13 @@ flatten@^1.0.2, flatten@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+follow-redirects@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-0.0.7.tgz#34b90bab2a911aa347571da90f22bd36ecd8a919"
+  dependencies:
+    debug "^2.2.0"
+    stream-consume "^0.1.0"
+
 for-in@^0.1.5:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.6.tgz#c9f96e89bfad18a545af5ec3ed352a1d9e5b4dc8"
@@ -3010,6 +3027,16 @@ getpass@^0.1.1:
 git-repo-info@^1.0.4:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/git-repo-info/-/git-repo-info-1.2.0.tgz#43d8513e04a24dd441330a2f7c6655a709fdbaf2"
+
+github-api:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/github-api/-/github-api-2.3.0.tgz#eee768460b29e86e91b96a9e79f8555cef6b5325"
+  dependencies:
+    axios "^0.10.0"
+    debug "^2.2.0"
+    es6-promise "^3.0.2"
+    js-base64 "^2.1.9"
+    utf8 "^2.1.1"
 
 github-url-from-git@~1.4.0:
   version "1.4.0"
@@ -6918,6 +6945,10 @@ stream-combiner@~0.0.4:
   dependencies:
     duplexer "~0.1.1"
 
+stream-consume@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/stream-consume/-/stream-consume-0.1.0.tgz#a41ead1a6d6081ceb79f65b061901b6d8f3d1d0f"
+
 strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
@@ -7542,6 +7573,10 @@ useragent@^2.1.9:
   resolved "https://registry.yarnpkg.com/useragent/-/useragent-2.1.9.tgz#4dba2bc4dad1875777ab15de3ff8098b475000b7"
   dependencies:
     lru-cache "2.2.x"
+
+utf8@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/utf8/-/utf8-2.1.1.tgz#2e01db02f7d8d0944f77104f1609eb0c304cf768"
 
 utf8@2.1.0:
   version "2.1.0"

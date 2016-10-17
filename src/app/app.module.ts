@@ -4,14 +4,14 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {MaterialModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
 
-import {MarkdownService} from './test.service';
-
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CounterComponent } from './counter/counter.component';
-import { TriageComponentComponent, InnerMd } from './triage-component/triage-component.component';
+import { TriageComponentComponent} from './triage-component/triage-component.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { MultiCompleteComponent } from './multi-complete/multi-complete.component';
+import { MarkdownDirective } from './markdown.directive';
+import {GithubService} from "./github.service";
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { MultiCompleteComponent } from './multi-complete/multi-complete.componen
     DashboardComponent,
     CounterComponent,
     TriageComponentComponent,
-    InnerMd,
     MultiCompleteComponent,
+    MarkdownDirective,
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -31,7 +31,7 @@ import { MultiCompleteComponent } from './multi-complete/multi-complete.componen
     NgbModule.forRoot()
   ],
   providers: [
-    MarkdownService,
+    GithubService
   ],
   bootstrap: [AppComponent]
 })
